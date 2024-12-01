@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class PlayerMechanics : MonoBehaviour
 {
-    // number of jumps the player can perform
-    public int MAXJUMPS;
     // Collider on feet
     public Collider2D feet;
     // this is the player sprite for manipulation on the object
@@ -20,6 +18,7 @@ public class PlayerMechanics : MonoBehaviour
     void Start()
     {
         speed = 0.1f;
+        jumps = 1;
     }
 
     // Update is called once per frame
@@ -42,12 +41,11 @@ public class PlayerMechanics : MonoBehaviour
     // this function is responsible for the jump mechanic 
     private void Jumps()
     {
-        if(Input.GetButtonDown("Jump") && jumps > 0)
+        if(Input.GetButtonDown("Jump"))
         {
             float JumpForce = 325f;
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
-            jumps--;
         }
     }
     // this function is responsible for anything that happens for and during horizontal movement of player
@@ -88,10 +86,14 @@ public class PlayerMechanics : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the object the feet touched is tagged "Ground"
+        // Check if the object's feet touched is tagged "Ground"
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
         {
-            jumps = MAXJUMPS;
+            jumps = 1;
+        }
+        if (collision.tag == "PowerUp")
+        {
+            speed = 5f;
         }
     }
     private void OnDrawGizmos()
