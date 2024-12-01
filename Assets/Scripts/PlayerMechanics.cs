@@ -23,7 +23,12 @@ public class PlayerMechanics : MonoBehaviour
     // this function is responsible for managing anything involving character movement or controls
     private void MovementManager()
     {
-        // horizontal movement
+        HorizontalMovement();
+    }
+    // this function is responsible for anything that happens for and during horizontal movement of player
+    private void HorizontalMovement()
+    {
+        // horizontal movement variable
         float horizontal = Input.GetAxis("Horizontal");
         if(horizontal < 0 && !sprite.GetComponent<SpriteRenderer>().flipX)
         {
