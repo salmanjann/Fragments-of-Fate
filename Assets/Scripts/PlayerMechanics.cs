@@ -1,14 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMechanics : MonoBehaviour
 {
+    // number of jumps the player can perform
+    public int MAXJUMPS;
+    // Collider on feet
+    public Collider2D feet;
     // this is the player sprite for manipulation on the object
     public GameObject sprite;
     // Speed that the player will be moving at
     private float speed;
+    // current number of jumps
+    private int jumps;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +25,11 @@ public class PlayerMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    
+    private void FixedUpdate()
+    {
         MovementManager();
     }
 
@@ -25,6 +37,18 @@ public class PlayerMechanics : MonoBehaviour
     private void MovementManager()
     {
         HorizontalMovement();
+        Jumps();
+    }
+    // this function is responsible for the jump mechanic 
+    private void Jumps()
+    {
+        if(Input.GetButtonDown("Jump") && jumps > 0)
+        {
+            float JumpForce = 300f;
+            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+            rb.AddForce(new Vector2(0,JumpForce));
+            jumps--;
+        }
     }
     // this function is responsible for anything that happens for and during horizontal movement of player
     private void HorizontalMovement()
@@ -49,5 +73,20 @@ public class PlayerMechanics : MonoBehaviour
             // sprite.transform.position = new Vector2(sprite.transform.position.x + 1.33f, sprite.transform.position.y);
         }
         this.transform.position = new Vector2(this.transform.position.x + (horizontal * speed), this.transform.position.y);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the object the feet touched is tagged "Ground"
+        if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
+        {
+            jumps = MAXJUMPS;
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        // Set the gizmo color
+        Gizmos.color = Color.green;
+        // Draw the collider's bounds
+        Gizmos.DrawWireCube(feet.bounds.center, feet.bounds.size);
     }
 }
