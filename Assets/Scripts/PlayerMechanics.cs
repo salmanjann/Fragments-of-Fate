@@ -62,6 +62,12 @@ public class PlayerMechanics : MonoBehaviour
         {
             // fix direction sprite is facing
             sprite.GetComponent<SpriteRenderer>().flipX = true;
+            // fix Colliders placement
+            Collider2D[] colliders = this.GetComponents<Collider2D>();
+            for(int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].offset = new Vector2(colliders[i].offset.x + 1.315949f, colliders[i].offset.y);
+            }
             // // displace sprite to match positions of pngs
             // sprite.transform.position = new Vector2(sprite.transform.position.x - 1.33f, sprite.transform.position.y);
         }
@@ -69,6 +75,12 @@ public class PlayerMechanics : MonoBehaviour
         {
             // fix direction sprite is facing
             sprite.GetComponent<SpriteRenderer>().flipX = false;
+            // fix Colliders placement
+            Collider2D[] colliders = this.GetComponents<Collider2D>();
+            for(int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].offset = new Vector2(colliders[i].offset.x - 1.315949f, colliders[i].offset.y);
+            }
             // // displace sprite to match positions of pngs
             // sprite.transform.position = new Vector2(sprite.transform.position.x + 1.33f, sprite.transform.position.y);
         }
@@ -84,9 +96,8 @@ public class PlayerMechanics : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        // Set the gizmo color
+        // DRAW THE FEET COLLIDER
         Gizmos.color = Color.green;
-        // Draw the collider's bounds
         Gizmos.DrawWireCube(feet.bounds.center, feet.bounds.size);
     }
 }
