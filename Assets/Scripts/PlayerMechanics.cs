@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,9 @@ public class PlayerMechanics : MonoBehaviour
     {
         // horizontal movement variable
         float horizontal = Input.GetAxis("Horizontal");
+        // set move variable for the animator to make him run or become idle
+        sprite.GetComponent<Animator>().SetFloat("move",Math.Abs(horizontal));
+        // Sprite flipping if needed
         if(horizontal < 0 && !sprite.GetComponent<SpriteRenderer>().flipX)
         {
             // fix direction sprite is facing
