@@ -44,7 +44,7 @@ public class PlayerMechanics : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && jumps > 0)
         {
-            float JumpForce = 300f;
+            float JumpForce = 325f;
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
             jumps--;
