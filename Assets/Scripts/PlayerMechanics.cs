@@ -114,8 +114,14 @@ public class PlayerMechanics : MonoBehaviour
         }
         if (collision.tag == "PowerUp")
         {
-            speed = 4f;
+            speed = 0.2f;
+            Invoke("speedReset", 10f);
         }
+    }
+
+    private void speedReset()
+    {
+        speed = 0.1f;
     }
 
     private void OnDrawGizmos()
