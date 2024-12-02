@@ -332,21 +332,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2925671932470851570, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5652115144336163009, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5652115144336163009, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
-      propertyPath: m_Layer
-      value: 6
+    - target: {fileID: 7609439528604351689, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609439528604351689, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609439528604351689, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533236884531063471, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
-      propertyPath: MAXJUMPS
-      value: 1
+      propertyPath: maxX
+      value: 23.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533236884531063471, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+      propertyPath: minX
+      value: -20.75
       objectReference: {fileID: 0}
     - target: {fileID: 8645534538388207662, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5116,7 +5124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 95bb8e371644b844183eb40be6ec8988, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

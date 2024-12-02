@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerMechanics : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerMechanics : MonoBehaviour
     // current number of jumps
     private int jumps;
     // Start is called before the first frame update
+
+    public float minX, maxX;
+    private Vector3 pos;
     void Start()
     {
         speed = 0.1f;
@@ -24,12 +28,28 @@ public class PlayerMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
-    
+
+    private void playerBound()
+    {
+        pos = this.transform.position;
+
+        if (pos.x < minX)
+        {
+            pos.x = minX;
+        }
+        else if (pos.x > maxX)
+        {
+            pos.x = maxX;
+        }
+
+        this.transform.position = pos;
+    }
+
     private void FixedUpdate()
     {
         MovementManager();
+        playerBound();
     }
 
     // this function is responsible for managing anything involving character movement or controls
