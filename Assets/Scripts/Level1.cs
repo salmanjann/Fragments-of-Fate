@@ -34,7 +34,6 @@ public class Level1 : MonoBehaviour
     private int score = 0; // Variable to store the player's score
     private int keysCollected = 0; // Count of keys collected
     public Animator doorAnimator; // Public Animator for the door
-    public Animator playerAnimator;
 
 
     void Start()
@@ -80,60 +79,15 @@ public class Level1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("Horizontal");
 
-        // Check if the player is moving left or right and flip the sprite
 
-        if (move < 0) // Moving left
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
-        }
-        else if (move > 0) // Moving right
-        {
-            transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
-        }
-
-        if (Input.GetButtonDown("Jump") && isjumping == false) //Input.GetKeyDown(KeyCode.Space)
-        {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
-        }
-
-        playerAnimator.SetFloat("Speed", Mathf.Abs(move));
-    }
-
-    private void FixedUpdate()
-    {
-        // Move the player
-        rb.velocity = new Vector2(move * speed, rb.velocity.y);
-
-        // Clamp the player's position within the bounds
-        float clampedX = Mathf.Clamp(rb.position.x, minX, maxX);
-
-        // Check if the player is above maxY
-        if (rb.position.y > maxY)
-        {
-            rb.position = new Vector2(clampedX, maxY); // Clamp Y position
-            rb.velocity = new Vector2(rb.velocity.x, 0); // Stop upward movement
-        }
-        else
-        {
-            rb.position = new Vector2(clampedX, rb.position.y);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
 
     {
-        if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "Tile")
 
-        {
-
-            isjumping = false;
-
-
-        }
-
-        else if (collision.gameObject.CompareTag("Mushroom"))
+        if (collision.gameObject.CompareTag("Mushroom"))
 
         {
             // Get the contact point and the mushroom's bounds
@@ -153,16 +107,6 @@ public class Level1 : MonoBehaviour
             }
         }
 
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "Tile")
-
-        {
-            isjumping = true;
-
-        }
     }
 
     void SpawnCoins()
@@ -316,7 +260,7 @@ public class Level1 : MonoBehaviour
     {
      
             // Set the Animator parameter to open the door
-            doorAnimator.SetBool("isOpen", true);
+        doorAnimator.SetBool("isOpen", true);
         Debug.Log("Hi");
 
     }
