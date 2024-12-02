@@ -7,6 +7,7 @@ using static UnityEditor.PlayerSettings;
 
 public class PlayerMechanics : MonoBehaviour
 {
+    public int maxJump;
     // Collider on feet
     public Collider2D feet;
     // this is the player sprite for manipulation on the object
@@ -22,7 +23,6 @@ public class PlayerMechanics : MonoBehaviour
     void Start()
     {
         speed = 0.1f;
-        jumps = 1;
     }
 
     // Update is called once per frame
@@ -61,11 +61,12 @@ public class PlayerMechanics : MonoBehaviour
     // this function is responsible for the jump mechanic 
     private void Jumps()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && jumps > 0)
         {
             float JumpForce = 325f;
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
+            jumps--;
         }
     }
     // this function is responsible for anything that happens for and during horizontal movement of player
@@ -109,13 +110,14 @@ public class PlayerMechanics : MonoBehaviour
         // Check if the object's feet touched is tagged "Ground"
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
         {
-            jumps = 1;
+            jumps = maxJump;
         }
         if (collision.tag == "PowerUp")
         {
-            speed = 5f;
+            speed = 4f;
         }
     }
+
     private void OnDrawGizmos()
     {
         // DRAW THE FEET COLLIDER
