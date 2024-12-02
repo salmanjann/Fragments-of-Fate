@@ -164,7 +164,7 @@ public class PlayerMechanics : MonoBehaviour
             }
         }
         // Check if the object is attacking "Enemy"
-        if (attack_box.IsTouching(collision) && collision.CompareTag("Enemy"))
+        if (attack_box != null && attack_box.IsTouching(collision) && collision.CompareTag("Enemy"))
         {
             EnemyHealthMechanism healthmechanish = collision.GetComponent<EnemyHealthMechanism>();
             if(healthmechanish != null)
