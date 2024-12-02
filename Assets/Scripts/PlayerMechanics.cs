@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerMechanics : MonoBehaviour
 {
+    // this is the damage that the player will be giving to the opponents
+    public int damage;
     // number of jumps the player can perform
     public int MAXJUMPS;
     // Collider on feet
@@ -24,8 +26,10 @@ public class PlayerMechanics : MonoBehaviour
     // make record if player is attacking kinda like buffer for next attack to work
     private bool attacking;
     // Start is called before the first frame update
+    private BoxCollider2D attack_box;
     void Start()
     {
+        attack_box = null;
         attacking = false;
         grounded = false;
         speed = 0.1f;
@@ -57,8 +61,21 @@ public class PlayerMechanics : MonoBehaviour
         {
             attacking = true;
             sprite.GetComponent<Animator>().SetTrigger("attack");
+            // setup attack hitbox
+            attack_box = this.gameObject.AddComponent<BoxCollider2D>();
+            attack_box.offset = new Vector2(0.731f,-0.797f);
+            attack_box.size = new Vector2(4.222319f,4.27028f);
+            attack_box.isTrigger = true;
+            // make sure new attack can be performed on animation exit
             Invoke("ResetAttack",20f/60f);
+            Invoke("destroyAttackBox",16f/60f);
         }
+    }
+    private void destroyAttackBox()
+    {
+        var temp = attack_box;
+        attack_box = null;
+        Destroy(temp);
     }
     // this finction resets attack after certain time as dev invokes to make sure player cannot add another attack in mean time of the current animation
     private void ResetAttack()
@@ -132,6 +149,15 @@ public class PlayerMechanics : MonoBehaviour
                 grounded = true;
             }
         }
+        // Check if the object is attacking "Enemy"
+        if (attack_box.IsTouching(collision) && collision.CompareTag("Enemy"))
+        {
+            EnemyHealthMechanism healthmechanish = collision.GetComponent<EnemyHealthMechanism>();
+            if(healthmechanish != null)
+            {
+                healthmechanish.Damage(damage);
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -143,8 +169,20 @@ public class PlayerMechanics : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        // DRAW THE FEET COLLIDER
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(feet.bounds.center, feet.bounds.size);
+        if(feet != null)
+        {
+            // DRAW THE FEET COLLIDER
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(feet.bounds.center, feet.bounds.size);
+        }
+        if(attack_box != null)
+        {
+            // DRAW THE ATTACK COLLIDER
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(attack_box.bounds.center, attack_box.bounds.size);
+            Gizmos.color = new Color(1,0,0,0.25f);
+            Gizmos.DrawCube(attack_box.bounds.center, attack_box.bounds.size);
+        }
     }
 }

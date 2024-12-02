@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c582fb697dce3d5a8e05bd556c84894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
   MAXJUMPS: 1
   feet: {fileID: 3953763530812077781}
   sprite: {fileID: 2925671932470851570}
