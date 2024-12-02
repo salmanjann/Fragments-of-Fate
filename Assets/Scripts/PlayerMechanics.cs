@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class PlayerMechanics : MonoBehaviour
 {
+
+    // force that is applied to rigid body
+    public float JumpForce;
     // this is the slider for hp in ui of game
     public Slider HpBar;
     // as name suggest it is max health of player
