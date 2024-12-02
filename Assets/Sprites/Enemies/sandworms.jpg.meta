@@ -1,0 +1,2353 @@
+fileFormatVersion: 2
+guid: 9de7f412cbf70984c91bbce0592ee5a6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sandworms_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f70f7cee5d7194086f6b2857f42026
+      internalID: -1180512654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221cdd59161624f48a3e959f1e76329a
+      internalID: 827327146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc8cad8328f57142ae981a6a0d0f099
+      internalID: -1386948891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d152336dca63448a07a91b9335d012
+      internalID: -780054330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c372e57fda60d46bdf5025f48a5386
+      internalID: -1652754264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857cf8d64489aaa42a2707d058ed6c71
+      internalID: 1184021843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57f42f67ccbfa2498bb6f9f0da27fce
+      internalID: 825482989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818fb5a4d19c80343b88495b036397c5
+      internalID: 1699635354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_8
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99de30557e7740d41b63b73c772159d3
+      internalID: 2111074296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_9
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c202fc9d598f9e4fae6c8f456922ee7
+      internalID: -2036900259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38fddf7927981054caab8951e3417633
+      internalID: 1011044839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_11
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ba23bf849015c4595ecbacf653c312
+      internalID: 571285242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460039a90f0a17d49abedb425bc897c8
+      internalID: 1246093612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_13
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d3602877a431740afdabac79da4893
+      internalID: -1049219974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_14
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b047a932a1db294689948058a5e51f8
+      internalID: 1597852515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_15
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c5cc6c436866d4797de3f9f5e4da2a
+      internalID: -1175413330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d1ed89be23f4640addadaec3e62fc8
+      internalID: -1165124132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_17
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d7c1484a2c6e049be5c07f144bc6db
+      internalID: -1754104290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_18
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a0d5864e7bf8349afb308957f0e760
+      internalID: -1702134930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_19
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debed77ee62cb954bbe23ec7c2b978ab
+      internalID: 626133420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_20
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f5b02213d17d0438c65a3bcdfc99ed
+      internalID: -1026805199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_21
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8128ae01f68de454baa78a2b98c5e471
+      internalID: 1971240649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_22
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d16a578c680fd243b99dfe73fbfd3d0
+      internalID: -859242811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_23
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16d3bba3d78175468f808aa0223f7c8
+      internalID: -974562385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_24
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 499
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b020c96e16b4fe42a2252f2d76519b2
+      internalID: -1956854183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6584c0e2aa61b4a8174da42237364d
+      internalID: 76758536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f96cb31e1db05948a827073da196517
+      internalID: 2082607877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_27
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a687f1abd9e55cc42a4065767adf5ec1
+      internalID: 1978477754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_28
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b4e8d4c9bd0554290497879ed2c503
+      internalID: -615798846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b988cd1f8c19264fa1510231d9afecc
+      internalID: -168537544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_30
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a1d9bf9deab4d468b764d7ae527551
+      internalID: -1307190311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_31
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d0b95639005504fbb8b7db90b87a99
+      internalID: -1480136513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_32
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a9de5431086654da38bd0ee03107ff
+      internalID: -1274100446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_33
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb1f029a8032e845a293408ccae5751
+      internalID: 1971769418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_34
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747fbc36f80eb454dbbea1c5dcff6bee
+      internalID: -177579352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_35
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5d3913839583346bb3cd3c4f5c1e12
+      internalID: 131545199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_36
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4c98f1c85e4d144925b7c3ba93c93a
+      internalID: 152247319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_37
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fd382cc530bb940819b20f81aea70f
+      internalID: 1827319424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_38
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cbe4d182d14814ca5b124a6706efb7
+      internalID: -446631606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_39
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7ce0b9d18079c4e87362a8b29bbc43
+      internalID: 1929008910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_40
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20a7ada8ad376541ac1dcc97193a4b6
+      internalID: 798433099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_41
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3ec4edf6cdc4c4eb141afde24205ce
+      internalID: -1507999524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_42
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced49d89dbfa85b42a438617f8839e3d
+      internalID: -910590548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_43
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce17fd6a039d1f4a92e1be43a38f2d6
+      internalID: -1765629693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_44
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d27b20ef46008345adbef5cb21cef73
+      internalID: 1235181328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_45
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb366ecfd0718bc49aaa3c74d0f120ec
+      internalID: 269570649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_46
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35056580e969a0744b48022e30457470
+      internalID: 1806990382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_47
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35171d612c57814c8d3198c1c7bacfe
+      internalID: 1671776515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_48
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912d5a01e846b794bace41989376d449
+      internalID: -1100733779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_49
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 349
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908e26b5ba626c146a26a0ed22a933e4
+      internalID: -2142925630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bee259352c5dd4e9d23b717ea13a4f
+      internalID: -1806224509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_51
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f764ccb81f0a304cac9f6bdf22e9ef7
+      internalID: -95438213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_52
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d707b84488a8e4c8d8cdb8a63b51d0
+      internalID: 268158060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_53
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335837a5878e59d48a96efcae9310f2a
+      internalID: 1990275857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_54
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de4f257a73b9804ba0b60bb53c291d9
+      internalID: -345174202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_55
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6939fd4c75cb8b4687c09dcb9c5680f
+      internalID: -402340150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_56
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8e9e2f641ece345ba44d377b2457d9
+      internalID: 25118764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_57
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eed9696ef248ce4392a1966457bfa4d
+      internalID: -515472593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_58
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce8db42290a2414f908d545c7169381
+      internalID: 781001704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_59
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0918f67835733d41a4b56349e7a241d
+      internalID: 1993879576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_60
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187cbf53983fda64b8d20864cc065baa
+      internalID: -1579663745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_61
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34b8cffd06eb1245a331a00df487bd1
+      internalID: 1548717658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_62
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7be23343b7a4c4c85757af95af2e0a
+      internalID: 1279827007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_63
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131a0d5c80b732144a5a08eced8bdf6f
+      internalID: 987555343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_64
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfda7c8917ad20b4d854d3c4a4bec4c0
+      internalID: -65841202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_65
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cfa6d0683228f409addcf497051eaf
+      internalID: 1626147045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_66
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ce848f4a3025c47bfd0c810ae4b61e
+      internalID: 259831252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_67
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e421fe567caf94f89fd46398571196
+      internalID: -874097194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_68
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27230bb50bf8ba0409e879a37936da82
+      internalID: 1222129837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_69
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cc6eca066be274fb77aef177616f06
+      internalID: -1498407901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_70
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5225fd45d7db935498c78f1b95e53b22
+      internalID: 301716088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_71
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b5c6d6b45aad5448181c1a2cba65af
+      internalID: -1464687564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_72
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab0f5dbd8e9ef34eaeea262321b1ec4
+      internalID: -97294206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_73
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b8a25fbdf423b41ab5f8bc968be00a
+      internalID: -1503653139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_74
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 199
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47ece7bdded39746bda5a3e8c6e70c2
+      internalID: -903418206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3776481110095149aa17761224b26c5
+      internalID: 315297681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_76
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d43a98a3d4a6040885f241a3180f3d
+      internalID: -1621127697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_77
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4450f361b512a4ea3fc23f78de564e
+      internalID: 1023026000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_78
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fb5a45ea8439f42a405c2f3ecb3311
+      internalID: 895020576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_79
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f98744add4cac4a8fcc13f50b517e2
+      internalID: 366160855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_80
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2810cd9f7be884a45b09f67e69d11419
+      internalID: 1974867162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_81
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db900f078507927468b0c9c85a263936
+      internalID: -1751695382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_82
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f13b9d85d46034b93c3003245f1bea
+      internalID: -1098148040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_83
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91052666f4e8d149bff5d8ef2383468
+      internalID: -1920651753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_84
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0908c2847ba74c4fbb2654eb750a2ca
+      internalID: -1762378721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_85
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a055166a0a7994a8e95bad64a5be7a
+      internalID: -1794155753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_86
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8fe32c069a8f3479dbf2c1273ba7fd
+      internalID: -1506164362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_87
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c361baf8cf39c3b40bac161826fcc454
+      internalID: -1749447710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_88
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc83e2bdd5af89d4db9c78276a3e1a47
+      internalID: -330258461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_89
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512b2ea5f1be6ca42b11402c94bd4190
+      internalID: -2097971203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_90
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394c92d6030423e4980b733a2d3d88a6
+      internalID: 993488184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_91
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4061d7b0e1775a4cb94dcea06141df7
+      internalID: 1322177070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_92
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b678d6928ca10e44c83b628a0eb5059d
+      internalID: -264420373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_93
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33ed8fd642f6b84f9ab7fba07be43f3
+      internalID: 1493862082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_94
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b57931e9144546971b58dbc958808
+      internalID: 1728535811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_95
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b145288216ceecb4d9f6d9dccff8a458
+      internalID: 2062518403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_96
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985b059147dbb604285b26459a32a950
+      internalID: 265007338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_97
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024edc0862cb3b948ba9257e2567d9ce
+      internalID: -1097483604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_98
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a965f0a0898e0164e85c62245d7ea47b
+      internalID: -1699939575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sandworms_99
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 49
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876975daeac7c964a98d5f7bfacce02a
+      internalID: 820736251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sandworms_0: -1180512654
+      sandworms_1: 827327146
+      sandworms_10: 1011044839
+      sandworms_11: 571285242
+      sandworms_12: 1246093612
+      sandworms_13: -1049219974
+      sandworms_14: 1597852515
+      sandworms_15: -1175413330
+      sandworms_16: -1165124132
+      sandworms_17: -1754104290
+      sandworms_18: -1702134930
+      sandworms_19: 626133420
+      sandworms_2: -1386948891
+      sandworms_20: -1026805199
+      sandworms_21: 1971240649
+      sandworms_22: -859242811
+      sandworms_23: -974562385
+      sandworms_24: -1956854183
+      sandworms_25: 76758536
+      sandworms_26: 2082607877
+      sandworms_27: 1978477754
+      sandworms_28: -615798846
+      sandworms_29: -168537544
+      sandworms_3: -780054330
+      sandworms_30: -1307190311
+      sandworms_31: -1480136513
+      sandworms_32: -1274100446
+      sandworms_33: 1971769418
+      sandworms_34: -177579352
+      sandworms_35: 131545199
+      sandworms_36: 152247319
+      sandworms_37: 1827319424
+      sandworms_38: -446631606
+      sandworms_39: 1929008910
+      sandworms_4: -1652754264
+      sandworms_40: 798433099
+      sandworms_41: -1507999524
+      sandworms_42: -910590548
+      sandworms_43: -1765629693
+      sandworms_44: 1235181328
+      sandworms_45: 269570649
+      sandworms_46: 1806990382
+      sandworms_47: 1671776515
+      sandworms_48: -1100733779
+      sandworms_49: -2142925630
+      sandworms_5: 1184021843
+      sandworms_50: -1806224509
+      sandworms_51: -95438213
+      sandworms_52: 268158060
+      sandworms_53: 1990275857
+      sandworms_54: -345174202
+      sandworms_55: -402340150
+      sandworms_56: 25118764
+      sandworms_57: -515472593
+      sandworms_58: 781001704
+      sandworms_59: 1993879576
+      sandworms_6: 825482989
+      sandworms_60: -1579663745
+      sandworms_61: 1548717658
+      sandworms_62: 1279827007
+      sandworms_63: 987555343
+      sandworms_64: -65841202
+      sandworms_65: 1626147045
+      sandworms_66: 259831252
+      sandworms_67: -874097194
+      sandworms_68: 1222129837
+      sandworms_69: -1498407901
+      sandworms_7: 1699635354
+      sandworms_70: 301716088
+      sandworms_71: -1464687564
+      sandworms_72: -97294206
+      sandworms_73: -1503653139
+      sandworms_74: -903418206
+      sandworms_75: 315297681
+      sandworms_76: -1621127697
+      sandworms_77: 1023026000
+      sandworms_78: 895020576
+      sandworms_79: 366160855
+      sandworms_8: 2111074296
+      sandworms_80: 1974867162
+      sandworms_81: -1751695382
+      sandworms_82: -1098148040
+      sandworms_83: -1920651753
+      sandworms_84: -1762378721
+      sandworms_85: -1794155753
+      sandworms_86: -1506164362
+      sandworms_87: -1749447710
+      sandworms_88: -330258461
+      sandworms_89: -2097971203
+      sandworms_9: -2036900259
+      sandworms_90: 993488184
+      sandworms_91: 1322177070
+      sandworms_92: -264420373
+      sandworms_93: 1493862082
+      sandworms_94: 1728535811
+      sandworms_95: 2062518403
+      sandworms_96: 265007338
+      sandworms_97: -1097483604
+      sandworms_98: -1699939575
+      sandworms_99: 820736251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
