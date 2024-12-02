@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMechanics : MonoBehaviour
 {
+    // this is the slider for hp in ui of game
+    public Slider HpBar;
+    // as name suggest it is max health of player
+    public int MaxHEALTH;
     // this is the damage that the player will be giving to the opponents
     public int damage;
     // number of jumps the player can perform
@@ -15,6 +20,8 @@ public class PlayerMechanics : MonoBehaviour
     public Collider2D feet;
     // this is the player sprite for manipulation on the object
     public GameObject sprite;
+    // this is the current health of player
+    private int health;
     // Speed that the player will be moving at
     private float speed;
     // current number of jumps
@@ -29,6 +36,8 @@ public class PlayerMechanics : MonoBehaviour
     private BoxCollider2D attack_box;
     void Start()
     {
+        health = MaxHEALTH;
+        HealthBarManager();
         attack_box = null;
         attacking = false;
         grounded = false;
@@ -44,7 +53,12 @@ public class PlayerMechanics : MonoBehaviour
     
     private void FixedUpdate()
     {
+        HealthBarManager();
         MovementManager();
+    }
+    private void HealthBarManager()
+    {
+        HpBar.value = (float)health/(float)MaxHEALTH;
     }
 
     // this function is responsible for managing anything involving character movement or controls
