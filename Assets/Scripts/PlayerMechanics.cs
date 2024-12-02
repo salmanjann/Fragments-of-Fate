@@ -108,8 +108,6 @@ public class PlayerMechanics : MonoBehaviour
             jumpbuffer = true;
             // jump animation plays
             sprite.GetComponent<Animator>().SetTrigger("jump");
-            // force that is applied to rigid body
-            float JumpForce = 300f;
             // getting rigidbody and applying force
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
