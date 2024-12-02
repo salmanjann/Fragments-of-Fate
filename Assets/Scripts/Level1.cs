@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Import for UI components
+using UnityEngine.SceneManagement;
+
 
 public class Level1 : MonoBehaviour
 
@@ -34,7 +36,11 @@ public class Level1 : MonoBehaviour
     private int score = 0; // Variable to store the player's score
     private int keysCollected = 0; // Count of keys collected
     public Animator doorAnimator; // Public Animator for the door
-
+    public BoxCollider2D player_collider;
+    private float topCollisionOffset = 0.1f;
+    public BoxCollider2D feet_collider;
+    public GameObject gameOverPanel; // Reference to the Game Over panel
+    public Button restartButton;
 
     void Start()
     {
@@ -74,40 +80,51 @@ public class Level1 : MonoBehaviour
         SpawnPotion();
         SpawnKeys();
 
+        gameOverPanel.SetActive(false);
+
+        // Assign the restart button's onClick listener
+        restartButton.onClick.AddListener(RestartLevel);
+
     }
 
     // Update is called once per frame
+
     void Update()
+
     {
 
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-
     {
-
+        // Check if the collided object is the mushroom
         if (collision.gameObject.CompareTag("Mushroom"))
-
         {
-            // Get the contact point and the mushroom's bounds
-            Vector2 contactPoint = collision.GetContact(0).point;
-            Bounds mushroomBounds = collision.gameObject.GetComponent<Collider2D>().bounds;
+            // Use the collider from the collision to check if it's touching the player_collider
+            if (player_collider.IsTouching(collision.collider))
+            {
+                // Push the mushroom away
+                Rigidbody2D mushroomRb = collision.gameObject.GetComponent<Rigidbody2D>();
+                if (mushroomRb != null)
+                {
+                    // Calculate the direction to push the mushroom
+                    Vector2 pushDirection = collision.transform.position - transform.position;
+                    pushDirection.Normalize(); // Ensure the direction is a unit vector
 
-            // Check if the contact point is above the mushroom's center
-            if (contactPoint.y > mushroomBounds.max.y - 0.1f) // Adjust offset for precision
-            {
-                // Destroy the mushroom if the player's feet land on it
-                Destroy(collision.gameObject);
-            }
-            else
-            {
-                // Take damage if the collision is not from above
+                    // Apply a force to the mushroom
+                    float pushForce = 10f; // Adjust this value as needed
+                    mushroomRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+                }
+
+                // Take damage
+                Debug.Log("Hello");
                 TakeDamage(20f);
             }
         }
-
     }
+
+
 
     void SpawnCoins()
     {
@@ -144,6 +161,25 @@ public class Level1 : MonoBehaviour
         newPotion.SetActive(true); // Ensure the new potion is visible
     }
 
+    void LateUpdate()
+    {
+        // Get the navbar's bottom boundary
+        float navbarBottomY = GameObject.Find("Square").GetComponent<SpriteRenderer>().bounds.min.y;
+
+        // Add an offset to lower the restriction boundary
+        float offset = 0.5f; // Adjust this value to suit the player's size
+        navbarBottomY -= offset;
+
+        // Clamp the player's position within the defined bounds
+        Vector2 clampedPosition = new Vector2(
+            Mathf.Clamp(transform.position.x, minX, maxX), // Restrict the x position between minX and maxX
+            Mathf.Clamp(transform.position.y, float.MinValue, navbarBottomY) // Restrict the y position to be below the navbar's bottom minus the offset
+        );
+
+        // Apply the clamped position to the player
+        transform.position = clampedPosition;
+    }
+
     void SpawnKeys()
     {
         for (int i = 0; i < 3; i++) // Spawn 3 keys
@@ -169,8 +205,25 @@ public class Level1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (feet_collider.IsTouching(collision) && collision.gameObject.CompareTag("Mushroom"))
+        {
+            // Get the bounds of the mushroom
+            Bounds mushroomBounds = collision.bounds;
+
+            // Get the feet collider bounds
+            Bounds feetBounds = feet_collider.bounds;
+
+            // Check if the feet collider's bottom is above the mushroom's top
+            if (feetBounds.min.y > mushroomBounds.center.y - topCollisionOffset)
+            {
+                // Destroy the mushroom
+                Destroy(collision.gameObject);
+            }
+        }
         // Check if the player collided with a coin
-        if (collision.gameObject.CompareTag("Coin"))
+
+        else if (player_collider.IsTouching(collision) && collision.gameObject.CompareTag("Coin"))
+
         {
             // Destroy the coin
 
@@ -183,7 +236,7 @@ public class Level1 : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        else if (collision.gameObject.CompareTag("potion"))
+        else if (player_collider.IsTouching(collision) && collision.gameObject.CompareTag("potion"))
         {
             // Increase player's health by 25% of max health
             float healthRestoration = maxHealth * 0.25f;
@@ -196,7 +249,7 @@ public class Level1 : MonoBehaviour
             // Destroy the potion object
             Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.CompareTag("key"))
+        else if (player_collider.IsTouching(collision) && collision.gameObject.CompareTag("key"))
 
         {
             // Collect key
@@ -210,19 +263,7 @@ public class Level1 : MonoBehaviour
                 UnlockDoor();
             }
         }
-        else if (collision.gameObject.CompareTag("Coin"))
-        {
-            // Destroy the coin
-            Destroy(collision.gameObject);
-        }
 
-        else if (!collision.gameObject.CompareTag("door"))
-
-        {
-
-            // do nothing
-
-        }
     }
     // Reduce the health
     private void TakeDamage(float damage)
@@ -233,10 +274,30 @@ public class Level1 : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject); // Destroy the player if health is 0
+            GameOver();
+           // Destroy(gameObject); // Destroy the player if health is 0
         }
     }
 
+    private void GameOver()
+    {
+        // Freeze the game
+        Time.timeScale = 0; // Pause the game
+
+        // Show the Game Over panel
+        gameOverPanel.SetActive(true);
+    }
+
+    // Restart the level
+    public void RestartLevel()
+
+    {
+        // Unfreeze the game
+        Time.timeScale = 1;
+
+        // Reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     // Update the health bar fill
     private void UpdateHealthBar()
     {
