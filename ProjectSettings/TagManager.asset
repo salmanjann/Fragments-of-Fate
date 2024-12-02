@@ -5,12 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - PlayerFeet
-<<<<<<< HEAD
   - Platform
-=======
-  - Enemy
->>>>>>> origin/MechanicsSandbox
+  - Invisible
   layers:
   - Default
   - TransparentFX
@@ -46,11 +42,11 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 939653237
+    uniqueID: 2792138393
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Front
-    uniqueID: 3642572159
+    uniqueID: 3280023301
     locked: 0

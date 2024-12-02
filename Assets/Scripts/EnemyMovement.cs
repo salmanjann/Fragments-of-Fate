@@ -84,18 +84,19 @@ public class EnemyMovement : MonoBehaviour
         {
             if (rightHit.collider.name == "Player" && !isAttacking)
             {
-                Debug.Log("Calling");
+                Debug.Log("Attacking Right");
                 Attack();
                 if (isMoveLeft)
                 {
                     FlipSprite();
                     MoveRight();
                 }
-            }
-            if (!isShooting)
-            {
-                isShooting = true;
-                // InvokeRepeating(nameof(ShootRight), 0f, 1f);
+                if (!isShooting)
+                {
+                    isShooting = true;
+                    Debug.Log("Shooting Right");
+                    InvokeRepeating(nameof(ShootRight), 1f, 2f);
+                }
             }
         }
 
@@ -103,23 +104,25 @@ public class EnemyMovement : MonoBehaviour
         {
             if (leftHit.collider.name == "Player" && !isAttacking)
             {
-                Debug.Log("Calling");
+                Debug.Log("Attacking Left");
                 Attack();
                 if (!isMoveLeft)
                 {
                     FlipSprite();
                     MoveLeft();
                 }
-            }
-            if (!isShooting)
-            {
-                isShooting = true;
-                // InvokeRepeating(nameof(ShootLeft), 0f, 1f);
+                if (!isShooting)
+                {
+                    isShooting = true;
+                    Debug.Log("Shooting Left");
+                    InvokeRepeating(nameof(ShootLeft), 1f, 2f);
+                }
             }
         }
 
-        if (rightHit.collider == null && leftHit.collider == null && isAttacking)
+        if (rightHit.collider == null && leftHit.collider == null && isAttacking )
         {
+            Debug.Log("Resetting");
             NotAttack();
         }
 
@@ -148,43 +151,32 @@ public class EnemyMovement : MonoBehaviour
         rb.velocity = new Vector2(0.0f, 0.0f);
         isAttacking = true;
         animator.SetTrigger("attack");
-        animator.ResetTrigger("walkBack");
-        // animator.ResetTrigger("idle");
-        Invoke("Idle", 1.0f);
+        Invoke("Idle", 1f);
+        animator.ResetTrigger("walk");
     }
 
     private void Idle()
     {
         animator.SetTrigger("idle");
-        animator.ResetTrigger("attack");
-        animator.ResetTrigger("walkBack");
-        if (isAttacking)
-            Invoke("AttackBack", 1.0f);
-        else
-            Invoke("Walk", 1.0f);
-    }
+        animator.ResetTrigger("attackBack");
 
+        Invoke("AttackBack", 1f);
+    }
     private void AttackBack()
     {
         animator.SetTrigger("attackBack");
-        if(isAttacking)
-            Invoke("Idle",1.0f);
-        else
-            Invoke("Walk",1.0f);
-    }
-    private void Walk()
-    {
-        animator.SetTrigger("walkBack");
-        animator.ResetTrigger("attack");
         animator.ResetTrigger("idle");
-        animator.ResetTrigger("attackBack");
+        if (isAttacking)
+            Invoke("Idle", 1f);
     }
 
     private void NotAttack()
     {
         isAttacking = false;
-        animator.SetTrigger("walkBack");
+        animator.SetTrigger("walk");
         animator.ResetTrigger("attack");
+        animator.ResetTrigger("attackBack");
+        animator.ResetTrigger("idle");
     }
 
     private void ShootRight()
@@ -206,6 +198,12 @@ public class EnemyMovement : MonoBehaviour
         }
 
         GameObject bullet = Instantiate(bulletPrefab, new Vector2(transform.position.x + 0.5f, transform.position.y / 2), Quaternion.identity);
+        if (direction == Vector2.left)
+        {
+            Vector3 scale = bullet.transform.localScale;
+            scale.x *= -1; // Invert the x-axis
+            bullet.transform.localScale = scale;
+        }
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
         if (bulletRb != null)
