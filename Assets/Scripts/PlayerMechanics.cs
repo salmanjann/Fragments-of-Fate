@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class PlayerMechanics : MonoBehaviour
@@ -18,9 +19,15 @@ public class PlayerMechanics : MonoBehaviour
     private int jumps;
     // makes sure jumps dont get unregistered imidiately
     private bool jumpbuffer;
+    // make record if player is on ground at any given moment of game
+    private bool grounded;
+    // make record if player is attacking kinda like buffer for next attack to work
+    private bool attacking;
     // Start is called before the first frame update
     void Start()
     {
+        attacking = false;
+        grounded = false;
         speed = 0.1f;
         jumpbuffer = false;
     }
@@ -41,12 +48,30 @@ public class PlayerMechanics : MonoBehaviour
     {
         HorizontalMovement();
         Jumps();
+        Attack();
+    }
+    // this function is responsible for attack function of the player
+    private void Attack()
+    {
+        if(!attacking && grounded && Input.GetKeyDown(KeyCode.Z))
+        {
+            attacking = true;
+            sprite.GetComponent<Animator>().SetTrigger("attack");
+            Invoke("ResetAttack",20f/60f);
+        }
+    }
+    // this finction resets attack after certain time as dev invokes to make sure player cannot add another attack in mean time of the current animation
+    private void ResetAttack()
+    {
+        attacking = false;
     }
     // this function is responsible for the jump mechanic 
     private void Jumps()
     {
         if(Input.GetButtonDown("Jump") && jumps > 0)
         {
+            grounded = false;
+            jumpbuffer = true;
             // jump animation plays
             sprite.GetComponent<Animator>().SetTrigger("jump");
             // force that is applied to rigid body
@@ -55,7 +80,6 @@ public class PlayerMechanics : MonoBehaviour
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
             jumps--;
-            jumpbuffer = true;
         }
     }
     // this function is responsible for anything that happens for and during horizontal movement of player
@@ -99,11 +123,13 @@ public class PlayerMechanics : MonoBehaviour
         // Check if the object the feet touched is tagged "Ground"
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
         {
-            jumps = MAXJUMPS;
             if (!jumpbuffer)
             {
+                jumps = MAXJUMPS;
                 // change animation
                 sprite.GetComponent<Animator>().SetTrigger("grounded");
+                // since ground was touched the player is grounded
+                grounded = true;
             }
         }
     }
