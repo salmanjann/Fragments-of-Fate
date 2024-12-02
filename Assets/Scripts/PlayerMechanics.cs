@@ -16,10 +16,13 @@ public class PlayerMechanics : MonoBehaviour
     private float speed;
     // current number of jumps
     private int jumps;
+    // makes sure jumps dont get unregistered imidiately
+    private bool jumpbuffer;
     // Start is called before the first frame update
     void Start()
     {
         speed = 0.1f;
+        jumpbuffer = false;
     }
 
     // Update is called once per frame
@@ -44,10 +47,15 @@ public class PlayerMechanics : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && jumps > 0)
         {
+            // jump animation plays
+            sprite.GetComponent<Animator>().SetTrigger("jump");
+            // force that is applied to rigid body
             float JumpForce = 300f;
+            // getting rigidbody and applying force
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0,JumpForce));
             jumps--;
+            jumpbuffer = true;
         }
     }
     // this function is responsible for anything that happens for and during horizontal movement of player
@@ -92,6 +100,19 @@ public class PlayerMechanics : MonoBehaviour
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
         {
             jumps = MAXJUMPS;
+            if (!jumpbuffer)
+            {
+                // change animation
+                sprite.GetComponent<Animator>().SetTrigger("grounded");
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Check if the object the feet was touching is tagged "Ground"
+        if (!feet.IsTouching(collision) && collision.CompareTag("Ground"))
+        {
+            jumpbuffer = false;
         }
     }
     private void OnDrawGizmos()
