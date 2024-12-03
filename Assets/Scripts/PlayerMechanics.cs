@@ -81,6 +81,8 @@ public class PlayerMechanics : MonoBehaviour
             // setup attack hitbox
             attack_box = this.gameObject.AddComponent<BoxCollider2D>();
             attack_box.offset = new Vector2(0.731f,-0.797f);
+            if(sprite.GetComponent<SpriteRenderer>().flipX)
+                attack_box.offset = new Vector2(-0.730f,-0.797f);
             attack_box.size = new Vector2(4.222319f,4.27028f);
             attack_box.isTrigger = true;
             // make sure new attack can be performed on animation exit
@@ -170,6 +172,16 @@ public class PlayerMechanics : MonoBehaviour
             EnemyHealthMechanism healthmechanish = collision.GetComponent<EnemyHealthMechanism>();
             if(healthmechanish != null)
             {
+                float force = collision.transform.position.x - this.transform.position.x;
+                if(force > 0)
+                {
+                    force = 300f;
+                }
+                else
+                {
+                    force = -300f;
+                }
+                collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
                 healthmechanish.Damage(damage);
             }
         }
