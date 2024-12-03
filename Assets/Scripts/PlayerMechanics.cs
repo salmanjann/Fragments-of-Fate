@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class PlayerMechanics : MonoBehaviour
 {
+    // original colour of the sprite
+    private Color originalColor;
+    // force that is applied to rigid body
+    public float JumpForce;
     // this is the slider for hp in ui of game
     public Slider HpBar;
     // as name suggest it is max health of player
@@ -17,7 +21,9 @@ public class PlayerMechanics : MonoBehaviour
     // number of jumps the player can perform
     public int MAXJUMPS;
     // Collider on feet
-    public Collider2D feet;
+    public BoxCollider2D feet;
+    // Collider on body
+    public BoxCollider2D body;
     // this is the player sprite for manipulation on the object
     public GameObject sprite;
     // this is the current health of player
@@ -37,6 +43,7 @@ public class PlayerMechanics : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     void Start()
     {
+        originalColor = sprite.GetComponent<SpriteRenderer>().color;
         health = MaxHEALTH;
         HealthBarManager();
         attack_box = null;
@@ -78,8 +85,10 @@ public class PlayerMechanics : MonoBehaviour
             sprite.GetComponent<Animator>().SetTrigger("attack");
             // setup attack hitbox
             attack_box = this.gameObject.AddComponent<BoxCollider2D>();
-            attack_box.offset = new Vector2(0.731f, -0.797f);
-            attack_box.size = new Vector2(4.222319f, 4.27028f);
+            attack_box.offset = new Vector2(0.731f,-0.797f);
+            if(sprite.GetComponent<SpriteRenderer>().flipX)
+                attack_box.offset = new Vector2(-0.730f,-0.797f);
+            attack_box.size = new Vector2(4.222319f,4.27028f);
             attack_box.isTrigger = true;
             // make sure new attack can be performed on animation exit
             Invoke("ResetAttack", 20f / 60f);
@@ -106,8 +115,6 @@ public class PlayerMechanics : MonoBehaviour
             jumpbuffer = true;
             // jump animation plays
             sprite.GetComponent<Animator>().SetTrigger("jump");
-            // force that is applied to rigid body
-            float JumpForce = 300f;
             // getting rigidbody and applying force
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(0, JumpForce));
@@ -132,8 +139,6 @@ public class PlayerMechanics : MonoBehaviour
             {
                 colliders[i].offset = new Vector2(colliders[i].offset.x + 1.315949f, colliders[i].offset.y);
             }
-            // // displace sprite to match positions of pngs
-            // sprite.transform.position = new Vector2(sprite.transform.position.x - 1.33f, sprite.transform.position.y);
         }
         else if (horizontal > 0 && sprite.GetComponent<SpriteRenderer>().flipX)
         {
@@ -145,13 +150,34 @@ public class PlayerMechanics : MonoBehaviour
             {
                 colliders[i].offset = new Vector2(colliders[i].offset.x - 1.315949f, colliders[i].offset.y);
             }
-            // // displace sprite to match positions of pngs
-            // sprite.transform.position = new Vector2(sprite.transform.position.x + 1.33f, sprite.transform.position.y);
         }
         this.transform.position = new Vector2(this.transform.position.x + (horizontal * speed), this.transform.position.y);
     }
+    // reset to default sprite colours
+    private void ResetColor()
+    {
+        sprite.GetComponent<SpriteRenderer>().color = originalColor;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Check if the Player is hit by an enemy
+        if (body.IsTouching(collision) && collision.CompareTag("Enemy"))
+        {
+            EnemyHealthMechanism enemyScript = collision.GetComponent<EnemyHealthMechanism>();
+            health -= enemyScript.damage;
+            float force = this.transform.position.x - collision.transform.position.x;
+            if(force > 0)
+            {
+                force = 100f;
+            }
+            else
+            {
+                force = -100f;
+            }
+            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
+            sprite.GetComponent<SpriteRenderer>().color = Color.red;
+            Invoke("ResetColor",1f);
+        }
         // Check if the object the feet touched is tagged "Ground"
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
         {
@@ -167,10 +193,20 @@ public class PlayerMechanics : MonoBehaviour
         // Check if the object is attacking "Enemy"
         if (attack_box != null && attack_box.IsTouching(collision) && collision.CompareTag("Enemy"))
         {
-            EnemyHealthMechanism healthmechanish = collision.GetComponent<EnemyHealthMechanism>();
-            if (healthmechanish != null)
+            EnemyHealthMechanism healthmechanism = collision.GetComponent<EnemyHealthMechanism>();
+            if(healthmechanism != null)
             {
-                healthmechanish.Damage(damage);
+                float force = collision.transform.position.x - this.transform.position.x;
+                if(force > 0)
+                {
+                    force = 300f;
+                }
+                else
+                {
+                    force = -300f;
+                }
+                collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
+                healthmechanism.Damage(damage);
             }
         }
         if(collision.tag == "Invisible"){
@@ -201,7 +237,6 @@ public class PlayerMechanics : MonoBehaviour
         if (attack_box != null)
         {
             // DRAW THE ATTACK COLLIDER
-
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(attack_box.bounds.center, attack_box.bounds.size);
             Gizmos.color = new Color(1, 0, 0, 0.25f);
