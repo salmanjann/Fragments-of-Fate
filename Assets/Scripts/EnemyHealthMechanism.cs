@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealthMechanism : MonoBehaviour
 {
+    // damage that this emeny can deliver to the player
+    public int damage;
     public int health;
     public GameObject sprite;
     // Start is called before the first frame update
