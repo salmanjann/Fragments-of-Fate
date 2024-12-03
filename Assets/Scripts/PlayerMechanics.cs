@@ -23,7 +23,7 @@ public class PlayerMechanics : MonoBehaviour
     // Collider on feet
     public BoxCollider2D feet;
     // Collider on body
-    public CapsuleCollider2D body;
+    public BoxCollider2D body;
     // this is the player sprite for manipulation on the object
     public GameObject sprite;
     // this is the current health of player
@@ -167,11 +167,11 @@ public class PlayerMechanics : MonoBehaviour
             float force = this.transform.position.x - collision.transform.position.x;
             if(force > 0)
             {
-                force = 300f;
+                force = 100f;
             }
             else
             {
-                force = -300f;
+                force = -100f;
             }
             this.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
             sprite.GetComponent<SpriteRenderer>().color = Color.red;
