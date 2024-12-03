@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IceBats : MonoBehaviour
 {
+    public CircleCollider2D vision;
     // Start is called before the first frame update
     void Start()
     {
