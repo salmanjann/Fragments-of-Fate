@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button_Activation : MonoBehaviour
+public class Destroy_Object : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,6 @@ public class Button_Activation : MonoBehaviour
     {
         
     }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
