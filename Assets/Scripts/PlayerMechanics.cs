@@ -134,8 +134,6 @@ public class PlayerMechanics : MonoBehaviour
             {
                 colliders[i].offset = new Vector2(colliders[i].offset.x + 1.315949f, colliders[i].offset.y);
             }
-            // // displace sprite to match positions of pngs
-            // sprite.transform.position = new Vector2(sprite.transform.position.x - 1.33f, sprite.transform.position.y);
         }
         else if(horizontal > 0 && sprite.GetComponent<SpriteRenderer>().flipX)
         {
@@ -147,8 +145,6 @@ public class PlayerMechanics : MonoBehaviour
             {
                 colliders[i].offset = new Vector2(colliders[i].offset.x - 1.315949f, colliders[i].offset.y);
             }
-            // // displace sprite to match positions of pngs
-            // sprite.transform.position = new Vector2(sprite.transform.position.x + 1.33f, sprite.transform.position.y);
         }
         this.transform.position = new Vector2(this.transform.position.x + (horizontal * speed), this.transform.position.y);
     }
@@ -205,7 +201,6 @@ public class PlayerMechanics : MonoBehaviour
         if(attack_box != null)
         {
             // DRAW THE ATTACK COLLIDER
-
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(attack_box.bounds.center, attack_box.bounds.size);
             Gizmos.color = new Color(1,0,0,0.25f);
