@@ -88,6 +88,7 @@ public class IceBats : MonoBehaviour
         Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
         if(rb.velocity.magnitude > 0.01f)
         {
+            this.GetComponent<CircleCollider2D>().enabled = false;
             velocityReset = false;
             Invoke("VelocityReset",2f);
         }
@@ -95,6 +96,7 @@ public class IceBats : MonoBehaviour
     // reset forces and velocities to zero
     private void VelocityReset()
     {
+        this.GetComponent<CircleCollider2D>().enabled = true;
         Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0f;
