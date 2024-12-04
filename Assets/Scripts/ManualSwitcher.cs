@@ -19,15 +19,15 @@ public class ManualSwitcher : MonoBehaviour
         //     SceneManager.LoadScene("Level_5");
         // }
 
-        // if(Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     SceneManager.LoadScene("Level_5");
-        // }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("Level1");
+        }
 
-        // if(Input.GetKeyDown(KeyCode.Alpha5))
-        // {
-        //     SceneManager.LoadScene("Level_2");
-        // }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("Level_2");
+        }
 
         // if(Input.GetKeyDown(KeyCode.Alpha5))
         // {
