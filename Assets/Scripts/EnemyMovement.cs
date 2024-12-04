@@ -197,7 +197,8 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        GameObject bullet = Instantiate(bulletPrefab, new Vector2(transform.position.x + 0.5f, transform.position.y / 2), Quaternion.identity);
+        Vector2 bulletInstancePosition = direction == Vector2.left ? new Vector2(transform.position.x - 0.5f, transform.position.y -0.8f) : new Vector2(transform.position.x + 0.5f, transform.position.y -0.8f);
+        GameObject bullet = Instantiate(bulletPrefab, bulletInstancePosition, Quaternion.identity);
         if (direction == Vector2.left)
         {
             Vector3 scale = bullet.transform.localScale;

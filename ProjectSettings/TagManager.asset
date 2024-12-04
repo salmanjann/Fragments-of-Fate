@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - Platform
   - Invisible
+  - Enemy
+  - Collectible
+  - DeadZone
+  - bullet
+  - Exit
   layers:
   - Default
   - TransparentFX

@@ -20,8 +20,11 @@ public class PlayerMechanics : MonoBehaviour
     public int damage;
     // number of jumps the player can perform
     public int MAXJUMPS;
+    public BoxCollider2D mainCollider;
+
     // Collider on feet
     public BoxCollider2D feet;
+    public BoxCollider2D feet2;
     // Collider on body
     public BoxCollider2D body;
     // this is the player sprite for manipulation on the object
@@ -41,6 +44,9 @@ public class PlayerMechanics : MonoBehaviour
     // Start is called before the first frame update
     private BoxCollider2D attack_box;
     public SpriteRenderer spriteRenderer;
+
+    // level4, comment this out
+    public Level4_UI level4_UIRef;
     void Start()
     {
         originalColor = sprite.GetComponent<SpriteRenderer>().color;
@@ -85,10 +91,10 @@ public class PlayerMechanics : MonoBehaviour
             sprite.GetComponent<Animator>().SetTrigger("attack");
             // setup attack hitbox
             attack_box = this.gameObject.AddComponent<BoxCollider2D>();
-            attack_box.offset = new Vector2(0.731f,-0.797f);
-            if(sprite.GetComponent<SpriteRenderer>().flipX)
-                attack_box.offset = new Vector2(-0.730f,-0.797f);
-            attack_box.size = new Vector2(4.222319f,4.27028f);
+            attack_box.offset = new Vector2(0.731f, -0.797f);
+            if (sprite.GetComponent<SpriteRenderer>().flipX)
+                attack_box.offset = new Vector2(-0.730f, -0.797f);
+            attack_box.size = new Vector2(4.222319f, 4.27028f);
             attack_box.isTrigger = true;
             // make sure new attack can be performed on animation exit
             Invoke("ResetAttack", 20f / 60f);
@@ -166,7 +172,7 @@ public class PlayerMechanics : MonoBehaviour
             EnemyHealthMechanism enemyScript = collision.GetComponent<EnemyHealthMechanism>();
             health -= enemyScript.damage;
             float force = this.transform.position.x - collision.transform.position.x;
-            if(force > 0)
+            if (force > 0)
             {
                 force = 100f;
             }
@@ -174,9 +180,27 @@ public class PlayerMechanics : MonoBehaviour
             {
                 force = -100f;
             }
-            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
+            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
             sprite.GetComponent<SpriteRenderer>().color = Color.red;
-            Invoke("ResetColor",1f);
+            Invoke("ResetColor", 1f);
+        }
+        // Check if the Player is hit by an bullet
+        if (body.IsTouching(collision) && collision.CompareTag("bullet"))
+        {
+            health -= 10;
+            float force = this.transform.position.x - collision.transform.position.x;
+            if (force > 0)
+            {
+                force = 80f;
+            }
+            else
+            {
+                force = -80f;
+            }
+            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
+            sprite.GetComponent<SpriteRenderer>().color = Color.red;
+            Invoke("ResetColor", 1f);
+            Destroy(collision.gameObject);
         }
         // Check if the object the feet touched is tagged "Ground"
         if (feet.IsTouching(collision) && collision.CompareTag("Ground"))
@@ -194,10 +218,10 @@ public class PlayerMechanics : MonoBehaviour
         if (attack_box != null && attack_box.IsTouching(collision) && collision.CompareTag("Enemy"))
         {
             EnemyHealthMechanism healthmechanism = collision.GetComponent<EnemyHealthMechanism>();
-            if(healthmechanism != null)
+            if (healthmechanism != null)
             {
                 float force = collision.transform.position.x - this.transform.position.x;
-                if(force > 0)
+                if (force > 0)
                 {
                     force = 300f;
                 }
@@ -205,18 +229,33 @@ public class PlayerMechanics : MonoBehaviour
                 {
                     force = -300f;
                 }
-                collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(force,0f));
+                collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
                 healthmechanism.Damage(damage);
             }
         }
-        if(collision.tag == "Invisible"){
-            spriteRenderer.color =  new Color(1f, 1f, 1f, 0.3f);
-            
-            Invoke("VisibleAgain",5f);
+
+        if (collision.gameObject.CompareTag("Exit"))
+        {
+            if (level4_UIRef.shardsCount != 5)
+            {
+                level4_UIRef.ShowShardsError();
+            }
+            else
+            {
+                // move to next level
+                Debug.Log("Level Complete");
+            }
         }
+
     }
-    private void VisibleAgain(){
-        spriteRenderer.color =  new Color(1f, 1f, 1f, 1f);
+    private void VisibleAgain()
+    {
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        feet.enabled = true;
+        body.enabled = true;
+        feet2.enabled = false;
+        mainCollider.enabled = true;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -242,5 +281,38 @@ public class PlayerMechanics : MonoBehaviour
             Gizmos.color = new Color(1, 0, 0, 0.25f);
             Gizmos.DrawCube(attack_box.bounds.center, attack_box.bounds.size);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Invisible"))
+        {
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0.3f);
+
+            feet2.enabled = true;
+            feet.enabled = false;
+            body.enabled = false;
+            mainCollider.enabled = false;
+            Destroy(other.gameObject);
+            Invoke("VisibleAgain", 5f);
+        }
+        if (other.gameObject.CompareTag("Collectible"))
+        {
+            level4_UIRef.UpdateCount();
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("DeadZone"))
+        {
+            sprite.GetComponent<Animator>().SetTrigger("Dead");
+            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            Destroy(other.gameObject);
+            Invoke("GameOver", 1f);
+        }
+    }
+    public void GameOver()
+    {
+        sprite.GetComponent<Animator>().SetTrigger("GameOver");
+
     }
 }
