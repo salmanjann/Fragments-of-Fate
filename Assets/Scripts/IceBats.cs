@@ -135,7 +135,7 @@ public class IceBats : MonoBehaviour
     {
         if(vision != null)
         {
-            // DRAW THE FEET COLLIDER
+            // DRAW THE VISION COLLIDER
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(vision.bounds.center, vision.radius);
         }
