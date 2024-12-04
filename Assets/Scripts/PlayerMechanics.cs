@@ -207,6 +207,7 @@ public class PlayerMechanics : MonoBehaviour
         {
             if (!jumpbuffer)
             {
+
                 jumps = MAXJUMPS;
                 // change animation
                 sprite.GetComponent<Animator>().SetTrigger("grounded");
@@ -242,8 +243,7 @@ public class PlayerMechanics : MonoBehaviour
             }
             else
             {
-                // move to next level
-                Debug.Log("Level Complete");
+                level4_UIRef.ShowLevelComplete();
             }
         }
 
@@ -265,6 +265,16 @@ public class PlayerMechanics : MonoBehaviour
             jumpbuffer = false;
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (feet2.enabled == true)
+        {
+            if (!feet2.IsTouching(collision.collider) && collision.gameObject.CompareTag("Ground"))
+            {
+                jumpbuffer = false;
+            }
+        }
+    }
     private void OnDrawGizmos()
     {
         if (feet != null)
@@ -283,6 +293,12 @@ public class PlayerMechanics : MonoBehaviour
         }
     }
 
+    private void DeactivateColliders()
+    {
+        feet.enabled = false;
+        body.enabled = false;
+        mainCollider.enabled = false;
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Invisible"))
@@ -290,11 +306,22 @@ public class PlayerMechanics : MonoBehaviour
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.3f);
 
             feet2.enabled = true;
-            feet.enabled = false;
-            body.enabled = false;
-            mainCollider.enabled = false;
+            Invoke("DeactivateColliders", 0.5f);
+
             Destroy(other.gameObject);
             Invoke("VisibleAgain", 5f);
+        }
+        // Check if the object the feet touched is tagged "Ground"
+        if (feet2.IsTouching(other.collider) && other.gameObject.CompareTag("Ground"))
+        {
+            if (!jumpbuffer)
+            {
+                jumps = MAXJUMPS;
+                // change animation
+                sprite.GetComponent<Animator>().SetTrigger("grounded");
+                // since ground was touched the player is grounded
+                grounded = true;
+            }
         }
         if (other.gameObject.CompareTag("Collectible"))
         {
@@ -313,6 +340,5 @@ public class PlayerMechanics : MonoBehaviour
     public void GameOver()
     {
         sprite.GetComponent<Animator>().SetTrigger("GameOver");
-
     }
 }

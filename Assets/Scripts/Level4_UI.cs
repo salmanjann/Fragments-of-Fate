@@ -34,7 +34,7 @@ public class Level4_UI : MonoBehaviour
     }
 
     public void ShowLevelComplete(){
-        shardsError.color = new Color(144,238,144,1f);
+        shardsError.color = new Color(0,246,0,1f);
         shardsError.text = "Level Completed";
     }
 }

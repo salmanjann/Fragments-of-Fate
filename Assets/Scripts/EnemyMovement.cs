@@ -84,7 +84,6 @@ public class EnemyMovement : MonoBehaviour
         {
             if (rightHit.collider.name == "Player" && !isAttacking)
             {
-                Debug.Log("Attacking Right");
                 Attack();
                 if (isMoveLeft)
                 {
@@ -94,7 +93,6 @@ public class EnemyMovement : MonoBehaviour
                 if (!isShooting)
                 {
                     isShooting = true;
-                    Debug.Log("Shooting Right");
                     InvokeRepeating(nameof(ShootRight), 1f, 2f);
                 }
             }
@@ -104,7 +102,6 @@ public class EnemyMovement : MonoBehaviour
         {
             if (leftHit.collider.name == "Player" && !isAttacking)
             {
-                Debug.Log("Attacking Left");
                 Attack();
                 if (!isMoveLeft)
                 {
@@ -114,7 +111,6 @@ public class EnemyMovement : MonoBehaviour
                 if (!isShooting)
                 {
                     isShooting = true;
-                    Debug.Log("Shooting Left");
                     InvokeRepeating(nameof(ShootLeft), 1f, 2f);
                 }
             }
@@ -122,7 +118,6 @@ public class EnemyMovement : MonoBehaviour
 
         if (rightHit.collider == null && leftHit.collider == null && isAttacking )
         {
-            Debug.Log("Resetting");
             NotAttack();
         }
 
