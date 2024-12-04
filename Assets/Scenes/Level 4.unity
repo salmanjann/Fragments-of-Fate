@@ -6531,7 +6531,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8533236884531063471, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6541,6 +6542,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5652115144336163009, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1631562201}
+    - targetCorrespondingSourceObject: {fileID: 5652115144336163009, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1631562204}
   m_SourcePrefab: {fileID: 100100000, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
 --- !u!1 &446862026
 GameObject:
@@ -11613,6 +11617,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1621339407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2925671932470851570, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
+  m_PrefabInstance: {fileID: 339543344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1631562194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5652115144336163009, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
@@ -11690,6 +11699,30 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3953763530812077781, guid: f8a57ed975c6c535ebdef96ae0b369d0, type: 3}
   m_PrefabInstance: {fileID: 339543344}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1631562204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631562194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910312a841ab0ca4d939b1e9895de8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpForce: 350
+  HpBar: {fileID: 1223523239}
+  MaxHEALTH: 100
+  damage: 10
+  MAXJUMPS: 1
+  mainCollider: {fileID: 1631562199}
+  feet: {fileID: 1631562203}
+  feet2: {fileID: 1631562195}
+  body: {fileID: 1631562202}
+  sprite: {fileID: 1621339407}
+  spriteRenderer: {fileID: 1435401459}
+  level4_UIRef: {fileID: 1540239177}
 --- !u!1 &1684503336
 GameObject:
   m_ObjectHideFlags: 0
