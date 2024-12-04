@@ -66,4 +66,10 @@ public class Player_Control : MonoBehaviour
     {
         speededUp = false;
     }
+
+    public void ModifySpeed(float speed)
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        this.transform.position = new Vector2(this.transform.position.x + (horizontal * speed), this.transform.position.y);
+    }
 }
