@@ -89,7 +89,7 @@ public class IceBats : MonoBehaviour
         if(rb.velocity.magnitude > 0.01f)
         {
             velocityReset = false;
-            Invoke("VelocityReset",1f);
+            Invoke("VelocityReset",2f);
         }
     }
     // reset forces and velocities to zero
