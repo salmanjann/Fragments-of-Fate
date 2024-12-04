@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public GameObject objectPrefab; // Reference to the prefab
-    private Vector3 startPosition; // Position to respawn
-
+    // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Object destroyed"); // Debugging
-        Destroy(gameObject);
-
-        StartCoroutine(RespawnObject());
-    }
-
-    IEnumerator RespawnObject()
-    {
-        Debug.Log("Respawn initiated...");
-        yield return new WaitForSeconds(5);
-        if (objectPrefab != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Instantiate(objectPrefab, startPosition, Quaternion.identity);
-            Debug.Log("Object respawned");
-        }
-        else
-        {
-            Debug.LogError("objectPrefab is not assigned in the Inspector!");
+            Destroy(gameObject);
         }
     }
 }

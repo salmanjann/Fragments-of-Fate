@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Destroy_Object : MonoBehaviour
 {
+    private static int buttonPressed = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -18,5 +20,12 @@ public class Destroy_Object : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
+        buttonPressed++;
+        Debug.Log(buttonPressed);
+
+        if (buttonPressed == 3)
+        {
+            Debug.Log("Open");
+        }
     }
 }
