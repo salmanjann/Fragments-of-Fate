@@ -5,6 +5,7 @@ using UnityEngine;
 public class Destroy_Object : MonoBehaviour
 {
     private static int buttonPressed = 0;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Destroy_Object : MonoBehaviour
 
         if (buttonPressed == 3)
         {
-            Debug.Log("Open");
+            anim.SetBool("isOpen", true);
         }
     }
 }
